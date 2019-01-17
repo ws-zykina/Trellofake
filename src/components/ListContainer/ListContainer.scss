@@ -1,0 +1,15 @@
+.list-container {
+  padding: 8px 4px;
+  background-color: #dfe3e6;
+  max-width: 300px;
+  min-width: 300px;
+  border: 1px solid #9d9e9f;
+  .list-header {
+    h4 {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+  .list-body {
+  }
+}

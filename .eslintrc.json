@@ -1,0 +1,56 @@
+{
+  "extends": [
+    "plugin:testcafe/recommended",
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
+  "parser": "babel-eslint",
+  "plugins": ["testcafe", "flowtype", "react"],
+  "rules": {
+    "no-await-in-loop": [0],
+    "no-plusplus": [
+      0,
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "comma-dangle": 0,
+    "no-param-reassign": 0,
+    "react/destructuring-assignment": [0, "always"],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js"]
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "tabWidth": 2,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignoreRegExpLiterals": true
+      }
+    ]
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "globals": {
+    "document": false,
+    "shallow": false,
+    "render": false,
+    "mount": false,
+    "toJson": false,
+    "fixture": false
+  }
+}

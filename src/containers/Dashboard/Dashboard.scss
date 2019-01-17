@@ -1,0 +1,14 @@
+.dashboard {
+  background-color: gainsboro;
+  height: calc(100% - 40px);
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  .list-container {
+    margin-right: 24px;
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
