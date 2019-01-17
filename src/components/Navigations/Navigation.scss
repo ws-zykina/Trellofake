@@ -1,5 +1,5 @@
 .top-nav {
-  background-color: gray;
+  background-color: rgba(0, 0, 0, 0.6);
   height: 40px;
   width: 100%;
   display: flex;
@@ -13,8 +13,10 @@
   }
   .left-nav-section {
     display: flex;
+    align-items: center;
   }
   .right-nav-section {
     display: flex;
+    align-items: center;
   }
 }

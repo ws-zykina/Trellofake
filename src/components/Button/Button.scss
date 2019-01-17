@@ -1,15 +1,15 @@
 .main-button {
-  height: 36px;
-  background-color: black;
+  height: 30px;
+  background-color: hsla(0, 0%, 100%, 0.3);
   min-width: 60px;
   color: white;
   font-size: 14px;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 .circle-button {
-  height: 36px;
-  width: 36px;
+  height: 34px;
+  width: 34px;
   border-radius: 50%;
   padding: 0;
   overflow: hidden;
