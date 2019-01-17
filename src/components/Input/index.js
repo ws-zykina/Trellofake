@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import './Input.scss';
 
 const Input = ({name, type, onChange, value, placeholder}) => {
   return (
-	<input name={name} type={type} onChange={(e) => onChange(name, e)} value={value} placeholder={placeholder}/>
+	<input className={'main-input'} name={name} type={type} onChange={(e) => onChange(name, e)} value={value} placeholder={placeholder}/>
   )
 }
 

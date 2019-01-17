@@ -7,3 +7,16 @@
   border: none;
   border-radius: 2px;
 }
+.circle-button {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}

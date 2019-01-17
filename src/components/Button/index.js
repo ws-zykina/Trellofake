@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import './Button.scss'
 
-const Button = ({onClick, title, children}) => {
+const Button = ({onClick, title, children, className}) => {
   return (
-	<button onClick={onClick} className="main-button">
+	<button onClick={onClick} className={className ? className : 'main-button'}>
 		{children}
 	</button>
   )

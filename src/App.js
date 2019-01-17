@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Router, Switch } from 'react-router-dom';
+import { Route, Router, Switch, Redirect } from 'react-router-dom';
 import Login from './containers/Login'
 import history from './core/history';
 import Protected from './containers/Protected'
@@ -10,8 +10,12 @@ class App extends Component {
     return (
       <Router history={history}>
           <Switch>
+
             <Route exact path="/login" component={Login} />
-            <Route path="/dashboard" component={Protected} />
+            <Route exact path="/dashboard" component={Protected} />
+            <Route path="/" component={Protected} />
+            <Redirect from='/' to={{ pathname: "/dashboard" }}/>
+          />
           </Switch>
         </Router>
     );

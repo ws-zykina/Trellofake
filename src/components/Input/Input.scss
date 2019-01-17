@@ -1,0 +1,17 @@
+.main-input {
+  background-color: black;
+  border: none;
+  border-radius: 2px;
+  min-height: 36px;
+  color: white;
+  padding: 0 6px;
+  &::placeholder {
+    color: gray;
+  }
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}

@@ -12,6 +12,16 @@ class Protected extends Component {
 		this.props.checkToken();
 	}
 
+	handleSearch = (name, e) => {
+		this.setState({
+			[name]: e.target.value
+		}, () => {
+			console.log('this.state', this.state);
+			console.log('TODO: trigger action from api for searching card');
+		})
+
+	}
+
 	render() {
 		let { checkingToken, isAuth } = this.props.auth;
 
@@ -26,7 +36,7 @@ class Protected extends Component {
 
 		return (
 			 <>
-				<Navigations/>
+				<Navigations onSearch={this.handleSearch}/>
 				<Dashboard />
 			</>
 		)
