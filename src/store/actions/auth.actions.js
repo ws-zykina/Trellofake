@@ -1,21 +1,21 @@
 
 import { AUTH_SUCCESS, AUTH_FAILED, CHECK_TOKEN_SUCCESS, CHECK_TOKEN_FAILED } from "../types/auth.type";
 import history from "../../core/history";
+import axios from '../../core/axios';
+import api from '../../core/api'
 
 
 export const login = ( user ) => async( dispatch ) => {
 	try {
+		const responce = await axios.post('http://localhost:3005/api/auth/signIn', user)
+		const { data: {token}} =  responce
 
-		const responce = {
-			name: 'User 1',
-			email: 'somemail@gmail.com'
-		}
 
-		await dispatch( {
-			type    : AUTH_SUCCESS,
-			payload : responce
-		} );
-		sessionStorage.setItem( "user", responce );
+		// await dispatch( {
+		// 	type    : AUTH_SUCCESS,
+		// 	payload : responce
+		// } );
+		sessionStorage.setItem( "token",  token );
 
 		history.push( "/dashboard" );
 	} catch ( error ) {

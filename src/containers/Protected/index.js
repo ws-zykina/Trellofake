@@ -3,11 +3,18 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { checkToken } from "../../store/actions/auth.actions";
 import { Route, Redirect } from "react-router-dom";
-
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import Input from '../../components/Input';
 import Navigations from '../../components/Navigations'
 import Dashboard from '../Dashboard';
+import { createGroup } from "../../store/actions/group.actions";
+
 
 class Protected extends Component {
+	state = {
+		showGroupModal: false,
+	}
+
 	componentDidMount() {
 		this.props.checkToken();
 	}
@@ -21,6 +28,49 @@ class Protected extends Component {
 		})
 
 	}
+
+	handleOpenGroupCreation = (field) => {
+		this.setState((state) => ({
+			[field]: !state[field]
+		}));
+	}
+
+	handleConfirm = (field) => {
+		const { newGroupName } = this.state;
+
+		this.props.createGroup({
+			name: newGroupName
+		})
+
+		this.setState((state) => ({
+			[field]: !state[field]
+		}));
+
+	}
+
+	handleChangeField = (field, event) => {
+		this.setState({[field]: event.currentTarget.value});
+	}
+
+	generateCreateGroupModal = () => {
+		const {showGroupModal} = this.state
+		console.log('this.state', this.state);
+		return (
+			<Modal isOpen={showGroupModal} toggle={this.handleOpenGroupCreation}>
+				<ModalHeader toggle={this.toggle}>Group</ModalHeader>
+				<ModalBody>
+					Please add Group
+					<Input name='newGroupName' onChange={this.handleChangeField} placeholder="please type group name" />
+				</ModalBody>
+				<ModalFooter>
+					<Button color="primary" onClick={() => this.handleConfirm('showGroupModal')}>Do Something</Button>{' '}
+					<Button color="secondary" onClick={()=>this.handleOpenGroupCreation('showGroupModal')}>Cancel</Button>
+				</ModalFooter>
+			</Modal>
+		)
+	}
+
+
 
 	render() {
 		let { checkingToken, isAuth } = this.props.auth;
@@ -36,8 +86,9 @@ class Protected extends Component {
 
 		return (
 			 <>
-				<Navigations onSearch={this.handleSearch}/>
+				<Navigations onSearch={this.handleSearch} handleNavClick={this.handleOpenGroupCreation}/>
 				<Dashboard />
+				{this.generateCreateGroupModal()}
 			</>
 		)
 	}
@@ -48,7 +99,7 @@ const mapStateToProps = ( { auth } ) => {
 };
 
 const mapDispatchToProps = ( dispatch ) => {
-	return bindActionCreators( { checkToken }, dispatch );
+	return bindActionCreators( { checkToken, createGroup }, dispatch );
 };
 
 export default connect( mapStateToProps, mapDispatchToProps )( Protected );

@@ -3,6 +3,7 @@ import { Route, Router, Switch, Redirect } from 'react-router-dom';
 import Login from './containers/Login'
 import history from './core/history';
 import Protected from './containers/Protected'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 
 class App extends Component {

@@ -11,9 +11,9 @@ import SearchBar from '../SearchBar';
 
 
 
-const Navigations = ({onSearch}) => {
+const Navigations = ({onSearch, handleNavClick}) => {
   return (
-	<div class='top-nav'>
+	<div className='top-nav'>
 		<div className="left-nav-section">
 			<Button>
 				<Icon iconName='fa-home'/>
@@ -27,7 +27,7 @@ const Navigations = ({onSearch}) => {
 		</div>
 		<Logo src='https://a.trellocdn.com/prgb/dist/images/header-logo-2x.01ef898811a879595cea.png' text='logo' />
 		<div className="right-nav-section">
-			<Button>
+			<Button onClick={()=>handleNavClick('showGroupModal')}>
 				<Icon iconName='fa-plus'/>
 			</Button>
 			<Button>
