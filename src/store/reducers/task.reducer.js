@@ -1,16 +1,25 @@
 
-import {GET_TASKS} from "../types/task.type";
+import {GET_TASKS, CREATE_TASK} from "../types/task.type";
 
 export const defaultState = {
-  task: {}
+  tasks: []
 };
 
 export default (state = defaultState, action) => {
+	console.log(action)
   switch (action.type) {
     case GET_TASKS:
 		return {
 			...state,
-			task : [1,2,3]
+			items: action.payload
+    };
+		case CREATE_TASK:
+		console.log(state)
+		const updatedTasksList = state.tasks;
+		updatedTasksList.push(action.payload);
+		return {
+			...state,
+			items: updatedTasksList
 		};
     default:
       return state;

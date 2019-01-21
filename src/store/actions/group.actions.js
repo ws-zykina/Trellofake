@@ -4,7 +4,7 @@ import axios from '../../core/axios';
 export const getGroups = ( user ) => async( dispatch ) => {
 	try {
 		const responce = await axios.get('http://localhost:3005/api/groups')
-
+		console.log('responce', responce);
 		await dispatch( {
 			type    : GET_GROUPS,
 			payload : responce.data

@@ -11,12 +11,11 @@ export const login = ( user ) => async( dispatch ) => {
 		const { data: {token}} =  responce
 
 
-		// await dispatch( {
-		// 	type    : AUTH_SUCCESS,
-		// 	payload : responce
-		// } );
+		await dispatch( {
+			type    : AUTH_SUCCESS,
+			payload : responce
+		} );
 		sessionStorage.setItem( "token",  token );
-
 		history.push( "/dashboard" );
 	} catch ( error ) {
 		dispatch( {
@@ -27,7 +26,7 @@ export const login = ( user ) => async( dispatch ) => {
 };
 
 export const checkToken = () => ( dispatch ) => {
-	let token = sessionStorage.getItem( "user" );
+	let token = sessionStorage.getItem( "token" );
 	console.log('this is checking token');
 	if (token) {
 		console.log('1', 1);

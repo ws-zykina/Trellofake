@@ -63,7 +63,7 @@ class Protected extends Component {
 					<Input name='newGroupName' onChange={this.handleChangeField} placeholder="please type group name" />
 				</ModalBody>
 				<ModalFooter>
-					<Button color="primary" onClick={() => this.handleConfirm('showGroupModal')}>Do Something</Button>{' '}
+					<Button color="primary" onClick={() => this.handleConfirm('showGroupModal')}>OK</Button>{' '}
 					<Button color="secondary" onClick={()=>this.handleOpenGroupCreation('showGroupModal')}>Cancel</Button>
 				</ModalFooter>
 			</Modal>

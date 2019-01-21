@@ -1,7 +1,10 @@
 import React from 'react'
 import './ListContainer.scss';
+import Input from '../../components/Input';
 
-const ListContainer = ({children, title}) => {
+
+
+const ListContainer = ({children, title, handleChange, handleKey}) => {
 
   return (
 	<div className='list-container'>
@@ -11,7 +14,9 @@ const ListContainer = ({children, title}) => {
 		<div className='list-body'>
 			{children}
 		</div>
-		<div>another things</div>
+		<div>
+			<Input name='newTaskName' onChange={handleChange} onKeyPress={handleKey} placeholder="New task" />
+		</div>
 	</div>
   )
 }

@@ -6,7 +6,7 @@ import GroupReducer from './group.reducer';
 
 
 const rootReducer = combineReducers({
-  task: TaskReducer,
+  tasks: TaskReducer,
   auth: AuthReducer,
   groups: GroupReducer,
 });
