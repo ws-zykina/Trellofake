@@ -6,7 +6,6 @@ export const defaultState = {
 };
 
 export default (state = defaultState, action) => {
-	console.log(action)
   switch (action.type) {
     case GET_GROUPS:
 		return {
@@ -14,7 +13,6 @@ export default (state = defaultState, action) => {
 			items: action.payload
 		};
 	case CREATE_GROUP:
-	console.log(state)
 		const updatedGroupsList = state.items;
 		updatedGroupsList.push(action.payload);
 		return {

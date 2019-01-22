@@ -29,10 +29,8 @@ export const checkToken = () => ( dispatch ) => {
 	let token = sessionStorage.getItem( "token" );
 	console.log('this is checking token');
 	if (token) {
-		console.log('1', 1);
 		dispatch( { type: CHECK_TOKEN_SUCCESS } );
 	} else {
-		console.log('2', 2);
 		dispatch( { type: CHECK_TOKEN_FAILED } );
 	}
 };
