@@ -11,8 +11,8 @@ class App extends Component {
     return (
       <Router history={history}>
           <Switch>
-
             <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Login} />
             <Route exact path="/dashboard" component={Protected} />
             <Route path="/" component={Protected} />
             <Redirect from='/' to={{ pathname: "/dashboard" }}/>

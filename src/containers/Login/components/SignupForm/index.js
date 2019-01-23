@@ -4,7 +4,7 @@ import Button from '../../../../components/Button';
 import Input from '../../../../components/Input';
 import '../LoginForm.scss';
 
-class LoginForm extends Component {
+class SignupForm extends Component {
 	handleChangeField = (field, event) => {
 		this.setState({[field]: event.currentTarget.value});
 	}
@@ -19,13 +19,14 @@ class LoginForm extends Component {
 		console.log(this.state)
 		return (
 			<form onSubmit={this.handleSubmit} className={'login-form'}>
+				<Input name='name' type='text' onChange={this.handleChangeField} placeholder='Enter your name' className="login-input"/>
 				<Input name='email' type='text' onChange={this.handleChangeField} placeholder='Enter email' className="login-input"/>
 				<Input name='password' type='password' onChange={this.handleChangeField} placeholder='Enter password' className="login-input"/>
 				<Button type='submit' onClick={this.handleSubmit} className="login-button">
-					Sign In
+					Sign Up
 				</Button>
 			</form>
 		)
   	}
 }
-export default LoginForm;
+export default SignupForm;

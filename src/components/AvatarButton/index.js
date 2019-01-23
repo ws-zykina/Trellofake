@@ -15,7 +15,6 @@ class AvatarButton extends Component {
 
 	render() {
 		const {text, image} = this.props;
-	console.log('text', text);
 		return (
 			<Button className={'circle-button'}>
 				<Avatar image={image} text={text && this.cutText(text)}/>

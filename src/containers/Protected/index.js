@@ -54,7 +54,6 @@ class Protected extends Component {
 
 	generateCreateGroupModal = () => {
 		const {showGroupModal} = this.state
-		console.log('this.state', this.state);
 		return (
 			<Modal isOpen={showGroupModal} toggle={this.handleOpenGroupCreation}>
 				<ModalHeader toggle={this.toggle}>Group</ModalHeader>

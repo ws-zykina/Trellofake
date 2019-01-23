@@ -7,7 +7,6 @@ import './Login.scss';
 
 class Login extends Component {
 	handleSubmit = (credentials) => {
-		console.log('123123123', credentials)
 		this.props.login(credentials);
 	}
 
