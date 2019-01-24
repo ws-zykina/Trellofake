@@ -29,16 +29,20 @@ export const login = ( user ) => async( dispatch ) => {
 export const registration = ( user ) => async( dispatch ) => {
 	try {
 		const responce = await axios.post('http://localhost:3005/api/auth/signUp', user)
+		const { data: {token}} =  responce
 		await dispatch( {
 			type    : SIGNUP_SUCCESS,
 			payload : responce.data
 		} );
-		
+		console.log("registration,SIGNUP_SUCCESS")
+		sessionStorage.setItem( "token",  token );
+		history.push( "/dashboard" );
  	} catch ( error ) {
 		dispatch( {
 			type    : SIGNUP_FAILED,
 			payload : 'Some error'
 		} );
+		console.log("registration,SIGNUP_FAILED")
 	}
 };
 

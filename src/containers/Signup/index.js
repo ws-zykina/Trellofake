@@ -7,7 +7,9 @@ import '../Signup/Signup.scss';
 
 class Signup extends Component {
 	handleSubmit = (credentials) => {
+		
 		this.props.registration(credentials);
+		console.log("this.props.registration(credentials);")
 	}
 
 	render() {
