@@ -1,9 +1,11 @@
 import { GET_TASKS, CREATE_TASK, REMOVE_TASK, CHANGE_TASK_GROUP} from "../types/task.type";
 import axios from '../../core/axios';
+import api from '../../core/api';
+
 
 export const getTasks = () => async( dispatch ) => {
 	try {
-		const responce = await axios.get('http://localhost:3005/api/tasks')
+		const responce = await axios.get(`${api.host}${api.tasks.getTasks}`)
 		await dispatch( {
 			type    : GET_TASKS,
 			payload : responce.data

@@ -17,7 +17,6 @@ class App extends Component {
             <Route exact path="/dashboard" component={Protected} />
             <Route path="/" component={Protected} />
             <Redirect from='/' to={{ pathname: "/dashboard" }}/>
-          />
           </Switch>
         </Router>
     );

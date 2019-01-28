@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from '../../../../components/Button';
 import Input from '../../../../components/Input';
 import '../LoginForm.scss';
+import history from '../../../../core/history';
 
 class LoginForm extends Component {
 	handleChangeField = (field, event) => {
@@ -13,6 +14,10 @@ class LoginForm extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault()
 		this.props.onSubmit(this.state);
+	}
+
+	handleGoToSU = () => {
+		history.push('/registration')
 	}
 
 	render() {
@@ -26,8 +31,8 @@ class LoginForm extends Component {
 					Sign In
 				</Button>
 				<div className="text"> OR </div>
-				<Button type='submit' className="login-button">
-					<Link to="/registration">Sign Up</Link>
+				<Button className="login-button" onClick={this.handleGoToSU}>
+					SignUp
 				</Button> 
 			</form>
 		)

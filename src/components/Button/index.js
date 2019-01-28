@@ -13,10 +13,10 @@ const Button = ({onClick, title, children, className}) => {
 
 Button.propTypes = {
 	title: PropTypes.string,
-	onClick:  PropTypes.string.isRequired
+	onClick:  PropTypes.func.isRequired
 };
 
 Button.defaultProps = {
-	title: 'Button'
+	children: 'Button'
 };
 export default Button;

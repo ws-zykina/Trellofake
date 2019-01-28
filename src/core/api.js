@@ -1,7 +1,11 @@
 const Api = {
+  host: 'http://localhost:3005',
   auth: {
-    signIn: `localhost:3005/api/auth/signIn`,
-    signUp: `localhost:3005/api/auth/signUp`,
+    signIn: `/api/auth/signIn`,
+    signUp: `/api/auth/signUp`,
+  },
+  tasks: {
+    getTasks: '/api/tasks'
   }
 };
 
